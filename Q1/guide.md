@@ -71,6 +71,31 @@ console.log("Valid phrases:", X(type, u));
 This prints your exact valid phrases. **Pick any one of them.**
 
 ---
+## Quick Reference: All Valid Phrases by Type
+
+**Type A (Truncated axis):**
+- `inflates tiny deltas by Nx`
+- `magnifies small movement about Nx`
+- `makes mild change look Nx`
+
+**Type B (Dual axis):**
+- `rescaled axis fakes synchronized trend`
+- `dual-axis scaling manufactures false correlation`
+- `secondary scale distorts cross-series comparison`
+- `right axis stretched by Nx`
+
+**Type C (Inverted axis):**
+- `inverted axis flips decline narrative`
+- `descending scale reverses trend meaning`
+- `axis direction turns fall into rise`
+
+**Type D (Log scale):**
+- `log scale compresses linear acceleration`
+- `log axis hides arithmetic growth pace`
+- `linear growth appears flattened on log`
+- `growth visually compressed by Nx`
+
+---
 
 ## Step 3 – Fix the HTML
 
@@ -108,26 +133,3 @@ At the very top of your fixed HTML, add this comment:
 
 ---
 
-## Quick Reference: All Valid Phrases by Type
-
-**Type A (Truncated axis):**
-- `inflates tiny deltas by Nx`
-- `magnifies small movement about Nx`
-- `makes mild change look Nx`
-
-**Type B (Dual axis):**
-- `rescaled axis fakes synchronized trend`
-- `dual-axis scaling manufactures false correlation`
-- `secondary scale distorts cross-series comparison`
-- `right axis stretched by Nx`
-
-**Type C (Inverted axis):**
-- `inverted axis flips decline narrative`
-- `descending scale reverses trend meaning`
-- `axis direction turns fall into rise`
-
-**Type D (Log scale):**
-- `log scale compresses linear acceleration`
-- `log axis hides arithmetic growth pace`
-- `linear growth appears flattened on log`
-- `growth visually compressed by Nx`
