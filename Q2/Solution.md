@@ -57,13 +57,13 @@ Does the documentation cover both a success and an error response code?
  
 ### Category: `prompt_engineering`
 ```
-Does the prompt specify an exact output format or schema such as JSON or CSV?
-Does the prompt include at least one input-output example?
-Does the prompt define behavior for empty or missing input?
-Does the prompt restrict output to a specific structure like JSON or CSV only?
-Does the prompt handle at least one edge case explicitly?
+Does the prompt specify an exact output format such as JSON or CSV by name?
+Does the prompt include at least one concrete input-output example?
+Does the prompt define behavior for empty, missing, or null input?
+Does the prompt use strict constraint language such as ONLY, must, required, or enforce?
+Does the prompt name specific output fields or keys such as label, matches, or translation?
 Does the prompt both specify an output format and include a worked example?
-Does the prompt enforce constraints on the number or type of output items?
+Does the prompt constrain the output structure by count, length, or number of items such as exactly 3 or one label per review?
 ```
  
 ---
