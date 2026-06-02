@@ -53,16 +53,24 @@ Press `Ctrl+C` to exit.
 
 ### Terminal 1 (PowerShell)
 
-Stop any running Ollama:
+Stop any running Ollama: (few commands run one by one)
 
 ```powershell
 taskkill /F /IM ollama.exe
 ```
+```
+taskkill /F /IM ollama.exe /T
+```
+Then verify that ollama is dead:
+run this command and this should print error : ``` curl http://localhost:11434 -UseBasicParsing ```
 
-Wait 5 seconds, then set CORS and start server:
+Also check Task manager and end task for ollama.exe
+
+**Set CORS and start server:**
 
 ```powershell
 $env:OLLAMA_ORIGINS="*"
+$env:OLLAMA_HOST="0.0.0.0:11434"
 ollama serve
 ```
 
@@ -92,16 +100,14 @@ Should output: `*`
 2. Extract `ngrok.exe` 
 3. Place in `C:\ngrok\` (or any folder you prefer)
 
-### Terminal 2 (Command Prompt)
+### Terminal 2 (Powershell or Command prompt)
 
 Open a **new** terminal in VS Code:
-- Click `+` in terminal panel
-- Select **"Command Prompt"** (not PowerShell)
 
 Navigate to ngrok folder:
 
 ```cmd
-cd C:\ngrok
+cd C:\ngrok or cd C:\Users\ngrok
 ```
 
 Add your authtoken (replace with your actual token):
