@@ -96,15 +96,27 @@ Find your **bug type** below and copy the code.
 **Fix:** Use only 3 possible values with 4+ elements — forces duplicates every time (pigeonhole principle).
 
 ```python
+
 from hypothesis import given, strategies as st
 
-@given(st.lists(st.integers(min_value=1, max_value=3), min_size=4, max_size=8))
-def test_sort(nums):
-    # Replace sort_inventory with YOUR function name
-    result = sort_inventory(nums)
-    assert result == sorted(nums)
-```
+class Item:
+    def __init__(self, value, tag):
+        self.value = value
+        self.tag = tag
+    def __gt__(self, other): return self.value > other.value
+    def __eq__(self, other): return self.value == other.value
+    def __repr__(self): return f"Item({self.value}, {self.tag})"
 
+@given(st.lists(st.integers(min_value=0, max_value=2), min_size=3))
+def test_sort(nums):
+    items = [Item(v, i) for i, v in enumerate(nums)]
+    # Replace sort_ranked_queue with YOUR function name
+    result = sort_ranked_queue(items)
+    for i in range(len(result)-1):
+        assert result[i].value <= result[i+1].value
+    assert [x.tag for x in result] == [x.tag for x in sorted(items, key=lambda x: x.value)]
+```
+    
 ---
 
 ### Type: `revenue` — Integer Overflow Bug 
