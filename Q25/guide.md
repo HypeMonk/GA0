@@ -33,7 +33,8 @@ Create a new folder on your computer with this exact structure:
 ```
 my-project/
 ├── api/
-│   ├── index.py
+│    └──index.py
+|
 ├── q-vercel-latency.json   ← your personal data file goes here (name must be same as this)
 ├── requirements.txt
 └── vercel.json
