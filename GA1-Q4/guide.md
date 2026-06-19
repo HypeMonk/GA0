@@ -81,7 +81,7 @@ git log --oneline -10 | llm -s "Analyze these git commit messages from the last 
 ### Task 5
 **"fetch the top Hacker News story title and generate 3 alternative headlines"**
 ```bash
-curl -s "https://hacker-news.firebaseio.com/v1/item/$(curl -s https://hacker-news.firebaseio.com/v1/topstories.json | jq -r '.[0]').json" | jq -r '.title' | llm -s "Generate 3 alternative headlines for this Hacker News story title, making them more engaging and creative"
+curl -s "https://hacker-news.firebaseio.com/v1/topstories.json" | jq -r '.[0]' | xargs -I{} curl -s "https://hacker-news.firebaseio.com/v1/item/{}.json" | jq -r '.title' | llm -s "Generate 3 alternative headlines for this Hacker News story title, making them more engaging and creative"
 ```
 
 ---
