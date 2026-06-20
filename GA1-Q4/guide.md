@@ -49,7 +49,7 @@ curl -s "[api-url]" | jq -r '.[field]' | llm -s "[detailed instruction]"
 ### Task 1
 **"fetch weather data from wttr.in for London and extract just the temperature in Celsius"**
 ```bash
-curl -s "https://wttr.in/London?format=j1" | jq -r '.current_condition[0].temp_C' | llm -s "The following is the current temperature in Celsius for London from wttr.in. Explain what this temperature means and how it feels."
+llm -f https://wttr.in/London?format=j1 | jq -r '.current_condition[0].temp_C'
 ```
 
 ---
